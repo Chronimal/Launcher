@@ -1,0 +1,48 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Launcher"
+run/main_scene="res://src/Launcher.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Ourodev/Launcher"
+boot_splash/image="res://assets/coh_bg.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0.141176, 0 )
+config/icon="res://assets/ouroboros.png"
+
+[autoload]
+
+Global="*res://src/Global.gd"
+
+[display]
+
+window/size/width=992
+window/size/height=687
+window/size/resizable=false
+window/dpi/allow_hidpi=true
+window/per_pixel_transparency/allowed=true
+window/per_pixel_transparency/enabled=true
+window/energy_saving/keep_screen_on=false
+
+[gui]
+
+theme/use_hidpi=true
+theme/custom="res://src/themes/default_theme.tres"
+
+[rendering]
+
+environment/default_clear_color=Color( 0.301961, 0.301961, 0.301961, 0 )

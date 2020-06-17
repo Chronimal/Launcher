@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/ouroboros.png" type="Texture" id=1]
+
+[node name="LeftPane" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -608.0
+margin_bottom = -175.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="."]
+margin_right = 128.0
+margin_bottom = 128.0
+texture = ExtResource( 1 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Project" type="OptionButton" parent="."]
+margin_top = 152.0
+margin_right = 288.0
+margin_bottom = 185.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
