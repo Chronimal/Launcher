@@ -1,6 +1,8 @@
-![Ourodev](assets/ouroboros.png)
 # Launcher
-**Launcher** is a very early prototype of an alternative launcher for [Ourodev's](https://ourodev.com/) version of [City of Heroes](https://en.wikipedia.org/wiki/City_of_Heroes).
+**Launcher** is a very early prototype of an alternative launcher for [Ourodev's](https://ourodev.com/) 
+version of [City of Heroes](https://en.wikipedia.org/wiki/City_of_Heroes).
+
+![Launcher](screenshots/install.png)
 
 Launcher aims to provide a single binary solution that, upon execution, presents a hopefully aesthetically pleasing user interface from which tasks such as reading patch notes and launching [City of Heroes](https://en.wikipedia.org/wiki/City_of_Heroes) can be accomplished.
 

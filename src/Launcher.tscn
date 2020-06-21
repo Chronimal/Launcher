@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://src/Launcher.gd" type="Script" id=2]
+[ext_resource path="res://assets/minimize.png" type="Texture" id=1]
+[ext_resource path="res://assets/close.png" type="Texture" id=2]
 [ext_resource path="res://assets/coh_bg.png" type="Texture" id=3]
-[ext_resource path="res://assets/minimize.png" type="Texture" id=4]
-[ext_resource path="res://assets/close.png" type="Texture" id=5]
+[ext_resource path="res://src/launcher.gd" type="Script" id=4]
 
 [node name="Launcher" type="TextureRect"]
 anchor_right = 1.0
@@ -12,7 +12,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
 stretch_mode = 3
-script = ExtResource( 2 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -23,8 +23,9 @@ margin_left = 888.0
 margin_top = 27.0
 margin_right = 920.0
 margin_bottom = 59.0
+hint_tooltip = "Minimize"
 size_flags_vertical = 4
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 1 )
 stretch_mode = 3
 __meta__ = {
 "_edit_lock_": true,
@@ -36,11 +37,13 @@ margin_left = 924.0
 margin_top = 27.0
 margin_right = 956.0
 margin_bottom = 59.0
+hint_tooltip = "Close"
 size_flags_vertical = 4
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 2 )
 stretch_mode = 3
 __meta__ = {
-"_edit_lock_": true
+"_edit_lock_": true,
+"_editor_description_": ""
 }
 [connection signal="gui_input" from="." to="." method="_on_Launcher_gui_input"]
 [connection signal="pressed" from="MinimizeButton" to="." method="_on_MinimizeButton_pressed"]

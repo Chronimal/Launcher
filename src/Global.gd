@@ -2,16 +2,15 @@ extends Node
 
 signal projects_ready(projects)
 
+var _paragon_italic_font = DynamicFont.new()
 
-# Called when the node enters the scene tree for the first time.
+func _init():
+	_paragon_italic_font.font_data = load("res://assets/paragon_city_italic.ttf")
+
 func _ready():
 	call_deferred("_emit_projects_ready")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-# experimental stuff -----------------------------
+# Temp. signal for test purpose
 func _emit_projects_ready():
 	var project = {
 		"name": "OuroDev QA",
@@ -20,29 +19,34 @@ func _emit_projects_ready():
 	var projects = [project]
 	emit_signal("projects_ready", projects)
 
-func load_save() -> Dictionary:
-	var f := File.new()
-	f.open("user://config.json", File.READ)
-	var result := JSON.parse(f.get_as_text())
-	f.close()
+func get_paragon_italic_font() -> DynamicFont:
+	return _paragon_italic_font
 
-	if result.error:
-		printerr("Failed to parse save file: ", f.error_string)
-	return result.result as Dictionary
+# Experimental stuff -----------------------------
 
-func save(data: Dictionary):
-	var f := File.new()
-	f.open("user://config.json", File.WRITE)
-	prints("Saving to", f.get_path_absolute())
-	f.store_string(JSON.print(data))
-	f.close()
-
-func _on_Button_pressed():
-	save({
-		"remote": {
-			"manifests": ["https://qa.ourodev.com/patch/manifest.xml"]
-		},
-		"local": {
-			"root": "D:/Games/Ourodev"
-		}
-	})
+#func load_save() -> Dictionary:
+#	var f := File.new()
+#	f.open("user://config.json", File.READ)
+#	var result := JSON.parse(f.get_as_text())
+#	f.close()
+#
+#	if result.error:
+#		printerr("Failed to parse save file: ", f.error_string)
+#	return result.result as Dictionary
+#
+#func save(data: Dictionary):
+#	var f := File.new()
+#	f.open("user://config.json", File.WRITE)
+#	prints("Saving to", f.get_path_absolute())
+#	f.store_string(JSON.print(data))
+#	f.close()
+#
+#func _on_Button_pressed():
+#	save({
+#		"remote": {
+#			"manifests": ["https://qa.ourodev.com/patch/manifest.xml"]
+#		},
+#		"local": {
+#			"root": "D:/Games/Ourodev"
+#		}
+#	})

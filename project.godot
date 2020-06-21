@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Button",
+"class": "TabButton",
+"language": "GDScript",
+"path": "res://src/tab_button.gd"
+} ]
 _global_script_class_icons={
-
+"TabButton": ""
 }
 
 [application]
 
 config/name="Launcher"
-run/main_scene="res://src/Launcher.tscn"
+run/main_scene="res://src/launcher.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Ourodev/Launcher"
 boot_splash/image="res://assets/coh_bg.png"
@@ -26,7 +31,7 @@ config/icon="res://assets/ouroboros.png"
 
 [autoload]
 
-Global="*res://src/Global.gd"
+Global="*res://src/global.gd"
 
 [display]
 
@@ -41,7 +46,6 @@ window/energy_saving/keep_screen_on=false
 [gui]
 
 theme/use_hidpi=true
-theme/custom="res://src/themes/default_theme.tres"
 
 [rendering]
 
