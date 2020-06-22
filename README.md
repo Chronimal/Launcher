@@ -14,4 +14,4 @@ Launcher aims to provide a single binary solution that, upon execution, presents
 * User interface fitting the [City of Heroes](https://en.wikipedia.org/wiki/City_of_Heroes) theme
 
 ## Implementation
-Launcher is a [GoDot](https://godotengine.org/) project using [GDScript](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html) to accomplish its various tasks. In the future it might be necessary to fall back and use _C#/Mono_ to accomplish complex operations.
+Launcher is a [GoDot](https://godotengine.org/) project using [GDScript](https://docs.godotengine.org/en/stable/getting_started/scripting/gdscript/gdscript_basics.html) to accomplish its various tasks. In the future it might be necessary to fall back and use [C#/Mono](https://godotengine.org/article/introducing-csharp-godot) to accomplish complex operations.
