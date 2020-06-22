@@ -34,8 +34,22 @@ func _on_projects_ready(_projects):
 	_add_scene("res://src/project_pane.tscn")
 	_add_scene("res://src/detail_pane.tscn")
 	_add_scene("res://src/install_pane.tscn")
+	_play_music(true)
 
 func _add_scene(path):
 	var packed = ResourceLoader.load(path)
 	var instanced = packed.instance()
 	get_tree().get_root().add_child(instanced)
+
+func _on_AudioOnButton_pressed():
+	_play_music(false)
+
+func _on_AudioOffButton_pressed():
+	_play_music(true)
+
+func _play_music(play : bool):
+	$AudioPlayer.playing = play
+	$AudioOnButton.disabled = !play
+	$AudioOnButton.visible = play
+	$AudioOffButton.disabled = play
+	$AudioOffButton.visible = !play

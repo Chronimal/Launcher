@@ -1,15 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://assets/minimize.png" type="Texture" id=1]
-[ext_resource path="res://assets/close.png" type="Texture" id=2]
+[ext_resource path="res://assets/minimize_button/pressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/close_button/normal.png" type="Texture" id=2]
 [ext_resource path="res://assets/coh_bg.png" type="Texture" id=3]
 [ext_resource path="res://src/launcher.gd" type="Script" id=4]
+[ext_resource path="res://assets/audio_on_button/normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/audio_on_button/hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/music/n_atlas_plaza.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/close_button/hover.png" type="Texture" id=8]
+[ext_resource path="res://assets/close_button/pressed.png" type="Texture" id=9]
+[ext_resource path="res://assets/minimize_button/hover.png" type="Texture" id=10]
+[ext_resource path="res://assets/minimize_button/normal.png" type="Texture" id=11]
+[ext_resource path="res://assets/audio_on_button/pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/audio_off_button/hover.png" type="Texture" id=13]
+[ext_resource path="res://assets/audio_off_button/pressed.png" type="Texture" id=14]
+[ext_resource path="res://assets/audio_off_button/normal.png" type="Texture" id=15]
+[ext_resource path="res://src/themes/launcher.tres" type="Theme" id=16]
 
 [node name="Launcher" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 16 )
 texture = ExtResource( 3 )
 stretch_mode = 3
 script = ExtResource( 4 )
@@ -18,14 +31,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AudioOnButton" type="TextureButton" parent="."]
+margin_left = 860.0
+margin_top = 19.0
+margin_right = 892.0
+margin_bottom = 51.0
+hint_tooltip = "Music Off"
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 6 )
+stretch_mode = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AudioOffButton" type="TextureButton" parent="."]
+visible = false
+margin_left = 860.0
+margin_top = 19.0
+margin_right = 892.0
+margin_bottom = 51.0
+hint_tooltip = "Music On"
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 13 )
+stretch_mode = 3
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="MinimizeButton" type="TextureButton" parent="."]
-margin_left = 888.0
-margin_top = 27.0
-margin_right = 920.0
-margin_bottom = 59.0
+margin_left = 902.0
+margin_top = 19.0
+margin_right = 934.0
+margin_bottom = 51.0
 hint_tooltip = "Minimize"
 size_flags_vertical = 4
-texture_normal = ExtResource( 1 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 10 )
 stretch_mode = 3
 __meta__ = {
 "_edit_lock_": true,
@@ -33,18 +79,26 @@ __meta__ = {
 }
 
 [node name="CloseButton" type="TextureButton" parent="."]
-margin_left = 924.0
-margin_top = 27.0
-margin_right = 956.0
-margin_bottom = 59.0
+margin_left = 938.0
+margin_top = 19.0
+margin_right = 970.0
+margin_bottom = 51.0
 hint_tooltip = "Close"
 size_flags_vertical = 4
 texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 8 )
 stretch_mode = 3
 __meta__ = {
 "_edit_lock_": true,
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
 [connection signal="gui_input" from="." to="." method="_on_Launcher_gui_input"]
+[connection signal="pressed" from="AudioOnButton" to="." method="_on_AudioOnButton_pressed"]
+[connection signal="pressed" from="AudioOffButton" to="." method="_on_AudioOffButton_pressed"]
 [connection signal="pressed" from="MinimizeButton" to="." method="_on_MinimizeButton_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]

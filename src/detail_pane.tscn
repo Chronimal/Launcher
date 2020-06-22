@@ -1,22 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/detail_pane.gd" type="Script" id=1]
 [ext_resource path="res://src/themes/detail_pane.tres" type="Theme" id=2]
-[ext_resource path="res://assets/ariblk.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://src/tab_button.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 3 )
 
 [node name="DetailsPane" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 576.0
 margin_top = 88.0
-margin_right = -32.0
-margin_bottom = -32.0
+margin_right = -24.0
+margin_bottom = -24.0
 theme = ExtResource( 2 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 1 )
@@ -28,29 +23,31 @@ __meta__ = {
 [node name="PatchNodesButton" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -193.0
-margin_bottom = -527.0
+margin_right = -197.0
+margin_bottom = -535.0
 toggle_mode = true
 pressed = true
 text = "PATCH NOTES"
-script = ExtResource( 4 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="SettingsButton" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 193.0
-margin_bottom = -527.0
+margin_left = 197.0
+margin_bottom = -535.0
 toggle_mode = true
 text = "SETTINGS"
-script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Details" type="TabContainer" parent="."]
-margin_top = 80.0
-margin_right = 384.0
-margin_bottom = 567.0
+margin_top = 72.0
+margin_right = 392.0
+margin_bottom = 575.0
 tabs_visible = false
 __meta__ = {
 "_edit_lock_": true,
@@ -60,18 +57,21 @@ __meta__ = {
 [node name="PatchNodes" type="RichTextLabel" parent="Details"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 2 )
+focus_mode = 2
 bbcode_enabled = true
 bbcode_text = "[b][color=#CC8400][url=https://qa.ourodev.com/]State of the Ouro - April 2020[/url][/color][/b]
 
 We migrated ourodev.com to a new host this year, which is privately run.  The new host offers us more flexibility and hosting options with lower server costs.  Overall, things are running smoothly (barring a few site issues.  Those will be fixed soon ™️ )
 
-We have had 2 major releases this year, Issue 1: From the Ashes, and Issue 2: Foundations of Tomorrow.  We have goals now for Issue 3: finalizing the 64-bit implementation of the entire system, and starting the first steps of the \"Road to Linux\" - PostgreSQL support and the removal of the Windows Registry requirements."
+We have had 2 major releases this year, Issue 1: From the Ashes, and Issue 2: Foundations of Tomorrow.  We have goals now for Issue 3: finalizing the 64-bit implementation of the entire system, and starting the first steps of the \"Road to Linux\" - PostgreSQL support and the removal of the Windows Registry requirements.
+"
 text = "State of the Ouro - April 2020
 
 We migrated ourodev.com to a new host this year, which is privately run.  The new host offers us more flexibility and hosting options with lower server costs.  Overall, things are running smoothly (barring a few site issues.  Those will be fixed soon ™️ )
 
-We have had 2 major releases this year, Issue 1: From the Ashes, and Issue 2: Foundations of Tomorrow.  We have goals now for Issue 3: finalizing the 64-bit implementation of the entire system, and starting the first steps of the \"Road to Linux\" - PostgreSQL support and the removal of the Windows Registry requirements."
+We have had 2 major releases this year, Issue 1: From the Ashes, and Issue 2: Foundations of Tomorrow.  We have goals now for Issue 3: finalizing the 64-bit implementation of the entire system, and starting the first steps of the \"Road to Linux\" - PostgreSQL support and the removal of the Windows Registry requirements.
+"
+selection_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/close.png-5dfda58792925f4ecef1b7dd0e814906.stex"
+path="res://.import/normal.png-a27e3863b6f7440e75cbee3dc7c435a2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/close.png"
-dest_files=[ "res://.import/close.png-5dfda58792925f4ecef1b7dd0e814906.stex" ]
+source_file="res://assets/minimize_button/normal.png"
+dest_files=[ "res://.import/normal.png-a27e3863b6f7440e75cbee3dc7c435a2.stex" ]
 
 [params]
 

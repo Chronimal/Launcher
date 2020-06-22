@@ -1,29 +1,38 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/themes/install_pane.tres" type="Theme" id=1]
 
+[sub_resource type="StyleBoxEmpty" id=1]
+
 [node name="InstallPane" type="Panel"]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 32.0
-margin_top = 520.0
-margin_right = 520.0
-margin_bottom = 656.0
+margin_left = 24.0
+margin_top = 512.0
+margin_right = 532.0
+margin_bottom = 664.0
+mouse_filter = 2
 theme = ExtResource( 1 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 488.0
+margin_right = 508.0
 margin_bottom = 56.0
 text = "Version 6.6.6 available to download"
 align = 1
 valign = 2
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Install" type="Button" parent="."]
+[node name="InstallButton" type="Button" parent="."]
 margin_left = 96.0
 margin_top = 64.0
 margin_right = 416.0
 margin_bottom = 104.0
 text = "Install"
+__meta__ = {
+"_edit_lock_": true
+}

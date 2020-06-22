@@ -1,7 +1,11 @@
-[gd_resource type="Theme" load_steps=16 format=2]
+[gd_resource type="Theme" load_steps=18 format=2]
 
 [ext_resource path="res://assets/down.png" type="Texture" id=1]
-[ext_resource path="res://assets/paragon_city.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/paragon_city.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/paragon_city_italic.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=14]
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 8.0
@@ -96,7 +100,7 @@ OptionButton/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 OptionButton/constants/arrow_margin = 4
 OptionButton/constants/hseparation = 4
-OptionButton/fonts/font = null
+OptionButton/fonts/font = SubResource( 14 )
 OptionButton/icons/arrow = ExtResource( 1 )
 OptionButton/styles/disabled = SubResource( 1 )
 OptionButton/styles/focus = SubResource( 2 )
