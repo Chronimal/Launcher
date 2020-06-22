@@ -1,8 +1,5 @@
 extends Panel
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
 
 func _on_PatchNodesButton_focus_entered():
 	$SettingsButton.set_pressed(false)
@@ -18,4 +15,5 @@ func _on_SettingsButton_pressed():
 
 func _on_PatchNodes_meta_clicked(meta):
 	if typeof(meta) == TYPE_STRING:
+		#warning-ignore:return_value_discarded
 		OS.shell_open(meta)

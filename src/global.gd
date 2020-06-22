@@ -2,11 +2,6 @@ extends Node
 
 signal projects_ready(projects)
 
-var _paragon_italic_font = DynamicFont.new()
-
-#func _init():
-#	_paragon_italic_font.font_data = load("res://assets/paragon_city_italic.ttf")
-
 func _ready():
 	call_deferred("_emit_projects_ready")
 
@@ -18,9 +13,6 @@ func _emit_projects_ready():
 	}
 	var projects = [project]
 	emit_signal("projects_ready", projects)
-
-#func get_paragon_italic_font() -> DynamicFont:
-#	return _paragon_italic_font
 
 # Experimental stuff -----------------------------
 

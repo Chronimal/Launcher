@@ -23,6 +23,7 @@ boot_splash/image="res://assets/coh_bg.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0.141176, 0 )
 config/icon="res://assets/ouroboros.png"
+config/windows_native_icon="res://assets/ouroboros.ico"
 
 [autoload]
 
