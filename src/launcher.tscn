@@ -1,21 +1,24 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/minimize_button/pressed.png" type="Texture" id=1]
 [ext_resource path="res://assets/close_button/normal.png" type="Texture" id=2]
 [ext_resource path="res://assets/coh_bg.png" type="Texture" id=3]
 [ext_resource path="res://src/launcher.gd" type="Script" id=4]
-[ext_resource path="res://assets/audio_on_button/normal.png" type="Texture" id=5]
-[ext_resource path="res://assets/audio_on_button/hover.png" type="Texture" id=6]
-[ext_resource path="res://assets/music/n_atlas_plaza.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/music_on_button/normal.png" type="Texture" id=5]
+[ext_resource path="res://assets/music_on_button/hover.png" type="Texture" id=6]
+[ext_resource path="res://assets/music/hotzone.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/close_button/hover.png" type="Texture" id=8]
 [ext_resource path="res://assets/close_button/pressed.png" type="Texture" id=9]
 [ext_resource path="res://assets/minimize_button/hover.png" type="Texture" id=10]
 [ext_resource path="res://assets/minimize_button/normal.png" type="Texture" id=11]
-[ext_resource path="res://assets/audio_on_button/pressed.png" type="Texture" id=12]
-[ext_resource path="res://assets/audio_off_button/hover.png" type="Texture" id=13]
-[ext_resource path="res://assets/audio_off_button/pressed.png" type="Texture" id=14]
-[ext_resource path="res://assets/audio_off_button/normal.png" type="Texture" id=15]
+[ext_resource path="res://assets/music_on_button/pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/music_off_button/hover.png" type="Texture" id=13]
+[ext_resource path="res://assets/music_off_button/pressed.png" type="Texture" id=14]
+[ext_resource path="res://assets/music_off_button/normal.png" type="Texture" id=15]
 [ext_resource path="res://src/themes/launcher.tres" type="Theme" id=16]
+[ext_resource path="res://src/music_player.gd" type="Script" id=17]
+[ext_resource path="res://assets/music/bayside_docks.ogg" type="AudioStream" id=18]
+[ext_resource path="res://assets/music/n_atlas_plaza.ogg" type="AudioStream" id=19]
 
 [node name="Launcher" type="TextureRect"]
 anchor_right = 1.0
@@ -31,7 +34,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioOnButton" type="TextureButton" parent="."]
+[node name="MusicOnButton" type="TextureButton" parent="."]
 margin_left = 860.0
 margin_top = 19.0
 margin_right = 892.0
@@ -46,7 +49,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioOffButton" type="TextureButton" parent="."]
+[node name="MusicOffButton" type="TextureButton" parent="."]
 visible = false
 margin_left = 860.0
 margin_top = 19.0
@@ -95,10 +98,16 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+script = ExtResource( 17 )
+streams = [ ExtResource( 18 ), ExtResource( 7 ), ExtResource( 19 ) ]
+
+[node name="Fader" type="Tween" parent="MusicPlayer"]
 [connection signal="gui_input" from="." to="." method="_on_Launcher_gui_input"]
-[connection signal="pressed" from="AudioOnButton" to="." method="_on_AudioOnButton_pressed"]
-[connection signal="pressed" from="AudioOffButton" to="." method="_on_AudioOffButton_pressed"]
+[connection signal="pressed" from="MusicOnButton" to="." method="_on_MusicOnButton_pressed"]
+[connection signal="pressed" from="MusicOffButton" to="." method="_on_MusicOffButton_pressed"]
 [connection signal="pressed" from="MinimizeButton" to="." method="_on_MinimizeButton_pressed"]
 [connection signal="pressed" from="CloseButton" to="." method="_on_CloseButton_pressed"]
+[connection signal="finished" from="MusicPlayer" to="MusicPlayer" method="_on_MusicPlayer_finished"]
+[connection signal="tween_completed" from="MusicPlayer/Fader" to="MusicPlayer" method="_on_Fader_tween_completed"]
+[connection signal="tween_started" from="MusicPlayer/Fader" to="MusicPlayer" method="_on_Fader_tween_started"]

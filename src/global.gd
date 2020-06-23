@@ -3,6 +3,7 @@ extends Node
 signal projects_ready(projects)
 
 func _ready():
+	OS.keep_screen_on = false
 	call_deferred("_emit_projects_ready")
 
 # Temp. signal for test purpose

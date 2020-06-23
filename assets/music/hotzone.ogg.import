@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hotzone.ogg-b7fc8d3224e5de240804656c86f9f90a.oggstr"
+
+[deps]
+
+source_file="res://assets/music/hotzone.ogg"
+dest_files=[ "res://.import/hotzone.ogg-b7fc8d3224e5de240804656c86f9f90a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

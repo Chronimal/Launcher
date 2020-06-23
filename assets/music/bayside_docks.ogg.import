@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bayside_docks.ogg-3ee2a254d593b605c7ebb4a70c589876.oggstr"
+
+[deps]
+
+source_file="res://assets/music/bayside_docks.ogg"
+dest_files=[ "res://.import/bayside_docks.ogg-3ee2a254d593b605c7ebb4a70c589876.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
