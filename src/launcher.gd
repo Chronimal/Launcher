@@ -24,10 +24,10 @@ func _process(_delta):
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
-		if $MusicOnButton.visible:
+		if $AudioOnButton.visible:
 			$MusicPlayer.shuffle(true)
 	elif what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
-		if $MusicOnButton.visible:
+		if $AudioOnButton.visible:
 			$MusicPlayer.shuffle(false)
 
 func _add_scene(path):
@@ -37,10 +37,10 @@ func _add_scene(path):
 
 func _play_music(play : bool):
 	$MusicPlayer.shuffle(play)
-	$MusicOnButton.disabled = !play
-	$MusicOnButton.visible = play
-	$MusicOffButton.disabled = play
-	$MusicOffButton.visible = !play
+	$AudioOnButton.disabled = !play
+	$AudioOnButton.visible = play
+	$AudioOffButton.disabled = play
+	$AudioOffButton.visible = !play
 
 # Signal handling
 func _on_CloseButton_pressed():

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hover.png-436d78b7044f8144e92291ab3ad5395b.stex"
+path="res://.import/unchecked.png-a4073504ebb736c0f1ef849733e2abe3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/music_off_button/hover.png"
-dest_files=[ "res://.import/hover.png-436d78b7044f8144e92291ab3ad5395b.stex" ]
+source_file="res://assets/check_box/unchecked.png"
+dest_files=[ "res://.import/unchecked.png-a4073504ebb736c0f1ef849733e2abe3.stex" ]
 
 [params]
 

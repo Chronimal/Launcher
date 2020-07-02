@@ -30,6 +30,10 @@ boot_splash/bg_color=Color( 0, 0, 0.141176, 0 )
 config/icon="res://assets/ouroboros.png"
 config/windows_native_icon="res://assets/ouroboros.ico"
 
+[audio]
+
+default_bus_layout="res://src/themes/default_bus_layout.tres"
+
 [autoload]
 
 Global="*res://src/global.gd"
@@ -39,6 +43,7 @@ Global="*res://src/global.gd"
 window/size/width=992
 window/size/height=687
 window/size/resizable=false
+window/size/borderless=true
 window/dpi/allow_hidpi=true
 window/per_pixel_transparency/allowed=true
 window/per_pixel_transparency/enabled=true

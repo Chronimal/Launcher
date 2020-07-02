@@ -1,9 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/detail_pane.gd" type="Script" id=1]
 [ext_resource path="res://src/themes/detail_pane.tres" type="Theme" id=2]
+[ext_resource path="res://src/settings.gd" type="Script" id=4]
+[ext_resource path="res://src/themes/settings.tres" type="Theme" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0745098, 0.309804, 0.6, 0.25098 )
 
 [node name="DetailsPane" type="Panel"]
 anchor_right = 1.0
@@ -55,6 +62,7 @@ __meta__ = {
 }
 
 [node name="PatchNodes" type="RichTextLabel" parent="Details"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 focus_mode = 2
@@ -73,15 +81,185 @@ We have had 2 major releases this year, Issue 1: From the Ashes, and Issue 2: Fo
 "
 selection_enabled = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Settings" type="Panel" parent="Details"]
-visible = false
+[node name="Settings" type="ScrollContainer" parent="Details"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = -5.99997
+margin_bottom = 3.05176e-05
+theme = ExtResource( 5 )
+custom_styles/bg = SubResource( 2 )
+follow_focus = true
+scroll_horizontal_enabled = false
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ProjectSettings" type="VBoxContainer" parent="Details/Settings"]
+margin_right = 392.0
+margin_bottom = 503.0
+rect_min_size = Vector2( 392, 502 )
+size_flags_vertical = 3
+custom_constants/separation = 6
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Details/Settings/ProjectSettings"]
+margin_right = 392.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 0, 240 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="LeftAudioSeparator" type="HSeparator" parent="Details/Settings/ProjectSettings/Panel"]
+margin_left = 16.0
+margin_top = 19.0
+margin_right = 64.0
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioLabel" type="Label" parent="Details/Settings/ProjectSettings/Panel"]
+margin_left = 72.0
+margin_top = 10.0
+margin_right = 132.0
+margin_bottom = 33.0
+text = "Audio"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightAudioSeparator" type="HSeparator" parent="Details/Settings/ProjectSettings/Panel"]
+anchor_right = 1.0
+margin_left = 136.0
+margin_top = 18.0
+margin_right = -16.0
+margin_bottom = 26.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterMute" type="CheckBox" parent="Details/Settings/ProjectSettings/Panel"]
+margin_left = 16.0
+margin_top = 40.0
+margin_right = 112.0
+margin_bottom = 72.0
+pressed = true
+text = "Master"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MasterVolume" type="HSlider" parent="Details/Settings/ProjectSettings/Panel"]
+anchor_right = 1.0
+margin_left = 160.0
+margin_top = 40.0
+margin_right = -20.0
+margin_bottom = 72.0
+min_value = -48.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicMute" type="CheckBox" parent="Details/Settings/ProjectSettings/Panel"]
+margin_left = 32.0
+margin_top = 76.0
+margin_right = 128.0
+margin_bottom = 108.0
+pressed = true
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicVolume" type="HSlider" parent="Details/Settings/ProjectSettings/Panel"]
+anchor_right = 1.0
+margin_left = 160.0
+margin_top = 76.0
+margin_right = -20.0
+margin_bottom = 108.0
+min_value = -48.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundMute" type="CheckBox" parent="Details/Settings/ProjectSettings/Panel"]
+margin_left = 32.0
+margin_top = 112.0
+margin_right = 128.0
+margin_bottom = 144.0
+pressed = true
+text = "Sound"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundVolume" type="HSlider" parent="Details/Settings/ProjectSettings/Panel"]
+anchor_right = 1.0
+margin_left = 160.0
+margin_top = 112.0
+margin_right = -20.0
+margin_bottom = 144.0
+min_value = -48.0
+max_value = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftDistributionSeparator" type="HSeparator" parent="Details/Settings/ProjectSettings/Panel"]
+margin_left = 16.0
+margin_top = 163.0
+margin_right = 64.0
+margin_bottom = 171.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DistributionLabel" type="Label" parent="Details/Settings/ProjectSettings/Panel"]
+margin_left = 72.0
+margin_top = 154.0
+margin_right = 168.0
+margin_bottom = 177.0
+text = "Distribution"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightSeparator" type="HSeparator" parent="Details/Settings/ProjectSettings/Panel"]
+anchor_right = 1.0
+margin_left = 200.0
+margin_top = 163.0
+margin_right = -16.0
+margin_bottom = 171.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddDistributionButton" type="Button" parent="Details/Settings/ProjectSettings/Panel"]
+anchor_right = 1.0
+margin_left = 16.0
+margin_top = 189.0
+margin_right = -16.0
+margin_bottom = 225.0
+text = "Add Distribution..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="focus_entered" from="PatchNodesButton" to="." method="_on_PatchNodesButton_focus_entered"]
 [connection signal="pressed" from="PatchNodesButton" to="." method="_on_PatchNodesButton_pressed"]
 [connection signal="focus_entered" from="SettingsButton" to="." method="_on_SettingsButton_focus_entered"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="meta_clicked" from="Details/PatchNodes" to="." method="_on_PatchNodes_meta_clicked"]
+[connection signal="value_changed" from="Details/Settings/ProjectSettings/Panel/MasterVolume" to="Details/Settings" method="_on_MasterVolume_value_changed"]
+[connection signal="pressed" from="Details/Settings/ProjectSettings/Panel/AddDistributionButton" to="." method="_on_AddProjectButton_pressed"]
